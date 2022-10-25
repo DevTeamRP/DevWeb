@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin\\Release\\net6.0\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/8808df85-c59a-431b-8dde-9567723d17c8/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/TodoApiGo"
+}

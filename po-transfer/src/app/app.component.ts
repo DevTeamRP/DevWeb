@@ -1,7 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { PoDynamicFormField, PoMenuItem } from '@po-ui/ng-components';
 import { PoDynamicField } from '@po-ui/ng-components/lib/components/po-dynamic/po-dynamic-field.interface';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +13,63 @@ import { PoDynamicField } from '@po-ui/ng-components/lib/components/po-dynamic/p
 })
 export class AppComponent {
 
+  dynamicForm!: NgForm;
+  raw!: any;
+  API = environment.API;
+
+  constructor(private http: HttpClient) {
+    
+  }
   readonly menus: Array<PoMenuItem> = [
     { label: 'Inicio', action: () => alert('Hello world') }
   ];
  
   propertyForm: Array<PoDynamicFormField> = [
-    { property: 'sender', label:'Remetente', placeholder:'Remetente', required:true },
-    { property: 'recipient', label:'Destinatário', placeholder:'Destinatário', required:true },
-    { property: 'money', label:'Valor', type:'currency', placeholder:'Valor', required:true },
-    { property: 'description', label:'Descrição', required:true }
-   ]
+    {
+      property: 'sender',
+      label: 'Remetente',
+      placeholder: 'Remetente',
+      required: true,
+      gridColumns: 4
+    },
+    {
+      property: 'recipient',
+      label: 'Destinatário',
+      placeholder: 'Destinatário',
+      required: true,
+      gridColumns: 4
+    },
+    {
+      property: 'money',
+      label: 'Valor',
+      type: 'currency',
+      placeholder: 'Valor',
+      required: true,
+      gridColumns: 4
+    },
+    {
+      property: 'description',
+      label: 'Descrição',
+      required: true,
+      gridColumns: 12,
+      rows: 5,
+      placeholder: 'Descrição'
+    }
+  ];
+
+  save() {
+    this.raw = this.dynamicForm.form.getRawValue();
+    this.raw = {
+      ...this.raw,
+      date: new Date().toISOString()
+    }
+    this.http.post(this.API, this.raw).subscribe(() => {
+      alert('ok')
+    })
+  }
+
+  getForm(form: NgForm) {
+    this.dynamicForm = form;
+  }
 
 }

@@ -4,8 +4,15 @@
   <po-menu [p-menus]="menus"></po-menu>
 
   <po-page-default p-title="Hello World">
-    <po-dynamic-form #dynamicForm
-    [p-fields] = "propertyForm"    >
-</po-dynamic-form>
+    <po-dynamic-form #dynamicForm (p-form)="getForm($event)"
+      [p-fields] = "propertyForm"    >
+    </po-dynamic-form>
+    <po-button
+    [p-disabled]="dynamicForm.form.invalid || false"
+    (p-click)="save()"
+    p-label="Salvar"
+    class="po-md-3"
+    >
+</po-button>
   </po-page-default>
 </div>

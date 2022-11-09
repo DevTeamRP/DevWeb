@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "sender": "Guilherme",
+      "recipient": "Marcelo",
+      "money": 500,
+      "description": "teste",
+      "date": "2022-11-09T20:22:48.534Z",
+      "id": 1
+    },
+    {
+      "sender": "Felippe",
+      "recipient": "Isabel",
+      "money": 2000,
+      "description": "teste 2",
+      "date": "2022-11-09T20:23:17.139Z",
+      "id": 2
+    }
+  ]
+}

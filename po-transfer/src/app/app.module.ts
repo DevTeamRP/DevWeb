@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PoButtonModule, PoModule } from '@po-ui/ng-components';
+import { PoButtonModule, PoModule, PoStepperModule, PoListViewModule, PoContainerModule } from '@po-ui/ng-components';
 import { RouterModule } from '@angular/router';
 import { PoDynamicModule } from '@po-ui/ng-components';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule.forRoot([]),
     PoDynamicModule,
     PoButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    PoStepperModule,
+    PoListViewModule,
+    PoContainerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

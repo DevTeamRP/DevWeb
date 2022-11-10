@@ -9,7 +9,8 @@
   <po-menu [p-menus]="menus"></po-menu>
 
   <po-page-default p-title="Hello World">
-    <po-stepper #stepper  [p-step-icons]="true">
+    <po-widget class="po-md-8">
+      <po-stepper #stepper  [p-step-icons]="true">
       <po-step p-label="Transferência" [p-can-active-next-step]="poData.bind(this)">
           <po-dynamic-form #dynamicForm (p-form)="getForm($event)"
           [p-fields] = "propertyForm"    >
@@ -48,8 +49,15 @@
           </div>
         </po-container>
       </po-step>
-    </po-stepper>
-   
-
+      </po-stepper>
+    </po-widget>
+    <po-widget class="po-md-4">
+      <po-gauge p-title="Limite de Transferência" [p-value]="poGaugeAll"></po-gauge>
+      <po-gauge
+        p-title="Limite Diario"
+        [p-value]="poGaugeDay"
+        [p-ranges]="salesRanges"
+      ></po-gauge>
+    </po-widget>
   </po-page-default>
 </div>

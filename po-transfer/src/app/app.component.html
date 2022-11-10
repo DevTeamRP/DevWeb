@@ -1,3 +1,8 @@
+<po-loading-overlay
+    [hidden]="isHideLoading"
+    p-text="Carregando" >
+</po-loading-overlay>
+
 <div class="po-wrapper">
   <po-toolbar p-title="Hello World"></po-toolbar>
 
@@ -5,7 +10,7 @@
 
   <po-page-default p-title="Hello World">
     <po-stepper #stepper  [p-step-icons]="true">
-      <po-step p-label="Transferencia" [p-can-active-next-step]="poData.bind(this)">
+      <po-step p-label="Transferência" [p-can-active-next-step]="poData.bind(this)">
           <po-dynamic-form #dynamicForm (p-form)="getForm($event)"
           [p-fields] = "propertyForm"    >
           </po-dynamic-form>
@@ -36,7 +41,11 @@
 
       <po-step p-label="Concluido" [p-can-active-next-step]="poConcluded.bind(this)">
         <po-container>
-          Estamos em concluido
+          <img class="po-page-blocked-user-image po-m-5" src="../assets/checked.png">
+          <div class="po-row">
+            <p class="po-font-title po-text-center po-md-12 po-mb-2">Transferência</p>
+            <p class="po-font-text po-text-center po-md-12 po-mb-5">Concluida com sucesso</p>
+          </div>
         </po-container>
       </po-step>
     </po-stepper>

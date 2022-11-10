@@ -71,6 +71,14 @@
       "description": "teste",
       "date": "2022-11-10T03:56:42.227Z",
       "id": 9
+    },
+    {
+      "sender": "Guilherme",
+      "recipient": "Isabel",
+      "money": 500,
+      "description": "teste",
+      "date": "2022-11-10T04:46:12.326Z",
+      "id": 10
     }
   ]
 }

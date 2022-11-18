@@ -1,0 +1,28 @@
+<po-page-list [p-breadcrumb]="breadcrumb">
+  <po-list-view [p-items]="filmes" [p-actions]="actions">
+    <ng-template p-list-view-content-template let-item [p-title]="formatTitle">
+      <div class="po-row">
+        <po-info
+          class="po-md-6"
+          p-label="Titulo"
+          [p-value]="item.titulo"
+        ></po-info>
+        <po-info
+          class="po-md-6"
+          p-label="Diretor"
+          [p-value]="item.diretor"
+        ></po-info>
+        <po-info
+          class="po-md-6"
+          p-label="Genero"
+          [p-value]="item.genero"
+        ></po-info>
+        <po-info
+          class="po-md-6"
+          p-label="Duração"
+          [p-value]="item.duracao"
+        ></po-info>
+      </div>
+    </ng-template>
+  </po-list-view>
+</po-page-list>

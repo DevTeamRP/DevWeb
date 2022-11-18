@@ -1,0 +1,19 @@
+<po-loading-overlay [hidden]="Carregando" p-text="Carregando">
+</po-loading-overlay>
+
+<po-page-default [p-breadcrumb]="breadcrumb">
+  <po-dynamic-form
+    #dynamicForm
+    (p-form)="getForm($event)"
+    [p-fields]="propertyForm"
+    [p-value]="filme"
+  >
+  </po-dynamic-form>
+  <po-button
+    [p-disabled]="dynamicForm.form.invalid || false"
+    (p-click)="salvar()"
+    p-label="Salvar"
+    class="po-md-3"
+  >
+  </po-button>
+</po-page-default>

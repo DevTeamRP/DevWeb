@@ -1,0 +1,26 @@
+<po-loading-overlay [hidden]="Carregando" p-text="Carregando">
+</po-loading-overlay>
+
+<po-page-default
+  [p-breadcrumb]="breadcrumb"
+  p-title="Confirmar exclusão do filme"
+>
+  <po-dynamic-view [p-fields]="fields" [p-value]="filme"> </po-dynamic-view>
+  <po-button
+    (p-click)="deletar()"
+    p-label="Deletar"
+    class="po-md-3"
+    p-kind="primary"
+    p-icon="po-icon-delete"
+    [p-danger]="Danger"
+  >
+  </po-button>
+  <po-button
+    (p-click)="cancelar()"
+    p-label="Cancelar"
+    class="po-md-3"
+    p-kind="secondary"
+    [p-danger]="Danger"
+  >
+  </po-button>
+</po-page-default>

@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 using AutoMapper;
+using Microsoft.AspNetCore.Cors;
 
 namespace API.Controllers
 {
+    [EnableCors("CorsApi")]
     [ApiController]
     [Route("[controller]")]
     public class FilmeController : ControllerBase
